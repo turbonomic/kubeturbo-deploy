@@ -1,0 +1,19 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrolebinding
+    app.kubernetes.io/instance: kubeturbo-operator
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: kubeturbo-deploy
+    app.kubernetes.io/part-of: kubeturbo-deploy
+    app.kubernetes.io/managed-by: kustomize
+  name: kubeturbo-operator
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: kubeturbo-operator
+subjects:
+- kind: ServiceAccount
+  name: kubeturbo-operator
+  namespace: system

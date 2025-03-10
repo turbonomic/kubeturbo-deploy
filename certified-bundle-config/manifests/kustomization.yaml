@@ -1,0 +1,4 @@
+resources:
+- bases/kubeturbo-certified.clusterserviceversion.yaml
+- ../../config/default
+- ../../config/samples

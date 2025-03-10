@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: kubeturbo-operator
+rules:
+- apiGroups:
+  - charts.helm.k8s.io
+  resources:
+  - kubeturbos
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - charts.helm.k8s.io
+  resources:
+  - kubeturbos/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - charts.helm.k8s.io
+  resources:
+  - kubeturbos/status
+  verbs:
+  - get
+  - patch
+  - update
